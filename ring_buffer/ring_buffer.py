@@ -5,19 +5,19 @@ class RingBuffer:
     def __init__(self, capacity):
         self.storage = [None] * capacity
         self.capacity = capacity
-        self.newest = 0
+        self.new_item = 0
 
-# make newest zero index
+# make new_item zero index
 # use a length method
 
     def append(self, item):      
-        if self.newest == (len(self.storage)):
-            self.newest = 0
-            self.storage[self.newest] = item
-            self.newest += 1
+        if self.new_item == (len(self.storage)):
+            self.new_item = 0
+            self.storage[self.new_item] = item
+            self.new_item += 1
         else:
-            self.storage[self.newest] = item
-            self.newest += 1
+            self.storage[self.new_item] = item
+            self.new_item += 1
 
     def get(self):
         
